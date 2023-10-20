@@ -1,5 +1,4 @@
 import React from "react";
-// import Girl1 from "../asset/Girl1"
 import Button from "./button";
 import { Link } from "react-router-dom";
 
