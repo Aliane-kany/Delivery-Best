@@ -1,5 +1,4 @@
 import React from "react";
-import Navbar from "../component/navbar";
 import Card from "../component/card";
 import welcome1 from "../asset/Girl1.png";
 import welcome2 from "../asset/Girl2.jpg";
@@ -11,8 +10,6 @@ import welcome7 from "../asset/Girl7.jpg";
 import welcome8 from "../asset/Girl8.jpg";
 import welcome9 from "../asset/Girl9.jpg";
 
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faFacebook, faInstagram, faTwitter } from "@fortawesome/free-brands-svg-icons"
 
 const Lifestyle = () => {
   const products = [
@@ -102,7 +99,7 @@ const Lifestyle = () => {
   ];
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
 
       <section className="grid-container">
         {products.map((product, index) => (
@@ -111,7 +108,7 @@ const Lifestyle = () => {
             name={product.name}
             image={product.image}
             price={product.price}
-            sharee={product.sharee}
+            Sharee={product.Sharee}
             description={product.description}
             link={product.link}
           />

@@ -1,42 +1,85 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 // import {FaBar} from 'react-icons/fa'
-import Button from "./button"
-import { Link } from 'react-router-dom'
+import Button from "./button";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
+  
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(true);
+  console.log("MENU OPEN", mobileMenuOpen);
 
-    const [mobileMenuOpen, setMobileMenuOpen] = useState(true)
-    console.log("MENU OPEN", mobileMenuOpen)
-    return (
-        <nav>
-            {/* <h3>Logo</h3> */}
-            <ul>
-                <li> <Link to="/">Home</Link> </li>
-                <li> <Link to="/lifestyle">Lifestyle</Link> </li>
-                <li>  <Link to="/about">About</Link></li>
-                <li> <Link to="/contact">Contact</Link> </li>
-                <li> <Link to="/contact">Login</Link> </li>
-            </ul>
+  const [modal, setModal] = useState(false);
+  const handleModal = () => {
+    console.log("hello modal");
+    setModal(!modal);
+  };
 
-            <ul className={`mobile-menu ${mobileMenuOpen === false?' hidden':''}`}>
-                <Link to="/">Home</Link>
-                <Link to="/lifestyle">Lifestyle</Link>
-                <Link to="/about">About</Link>
-                <Link to="/contact">Contact</Link>
-                <Link to="/contact">Login</Link>
-            </ul>
+  return (
+    <div>
+      <nav>
+        <ul
+          className={`mobile-menu ${mobileMenuOpen === false ? " hidden" : ""}`}
+        >
+          <Link to="/">Home</Link>
+          <Link to="/about">About</Link>
+          <Link to="/contact">Contact</Link>
+          <Link onClick={handleModal}>Login</Link>
+        </ul>
 
-            <span className='menu'>
-                <button onClick={(e) => {
-                    e.preventDefault()
-                    setMobileMenuOpen(!mobileMenuOpen)
-                }}>
-                    Menu
-                </button>
-               
-            </span>
-        </nav>
-    )
-}
+        <span className="menu">
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              setMobileMenuOpen(!mobileMenuOpen);
+            }}
+          >
+            Menu
+          </button>
+        </span>
+      </nav>
 
-export default Navbar
+      {modal && (
+        <div className="modal-container">
+          <div className="form-cntainer">
+            <div class="wrapperr">
+              <form action="#">
+                <h2>Login</h2>
+                <div class="input-field">
+                  <input type="text" required />
+                  <label>Enter your email</label>
+                </div>
+                <div class="input-field">
+                  <input type="password" required />
+                  <label>Enter your password</label>
+                </div>
+                <div class="forget">
+                  <label for="remember">
+                    <input type="checkbox" id="remember" />
+                    <p>Remember me</p>
+                  </label>
+                  <Link to="/Signup">Forget Password</Link>
+                </div>
+                <Link to="/Blogs">
+                  {" "}
+                  <button onClick={handleModal} className="">
+                    Log In
+                  </button>
+                </Link>
+
+                {/* <Link to="/home">Forget Password</Link> */}
+                <div class="register">
+                  <p>
+                    Don't have an account? <Link to="/Signup">Register</Link>
+                  </p>
+                </div>
+              </form>
+            </div>
+            {/* <button onClick={handleModal}className=""></button> */}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default Navbar;
