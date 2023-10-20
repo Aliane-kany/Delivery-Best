@@ -1,4 +1,4 @@
-import React from "react";
+
 import axios from "axios";
 import { useState, useEffect } from "react";
 import Navbar from "../component/navbar";
@@ -17,6 +17,7 @@ import welcome9 from "../asset/Girl2.jpg";
 // import { faFacebook, faInstagram, faTwitter } from "@fortawesome/free-brands-svg-icons"
 import { BsFacebook } from "react-icons/bs";
 import { FaInstagramSquare, FaTwitter } from "react-icons/fa";
+
 
 const products = [
   {
@@ -152,8 +153,8 @@ const Home = () => {
             key={index}
             name={post.author}
             image={post.blogImage}
-            description={post.description}
-            link={post.Pholder}
+            description={post.content}
+            link={post.title}
           />
         ))}
       </section>
