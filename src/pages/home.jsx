@@ -18,91 +18,15 @@ import welcome9 from "../asset/Girl2.jpg";
 import { BsFacebook } from "react-icons/bs";
 import { FaInstagramSquare, FaTwitter } from "react-icons/fa";
 
-
-const products = [
-  {
-    name: "Yoga Changed It All",
-    image: welcome1,
-    price: "Nov 04-",
-    description:
-      "You ve gotta dance like there s nobody watching, love like you ll never be hurt sing like theres nobody",
-    link: "/cart",
-  },
-  {
-    name: "Make Me Smile",
-    image: welcome2,
-    price: "Nov 04-",
-    description:
-      "You ve gotta dance like there s nobody watching, love like you ll never be hurt sing like theres nobody",
-    link: "/cart",
-  },
-  {
-    name: "Make Me Smile",
-    image: welcome3,
-    price: "Nov 04-",
-    description:
-      "You ve gotta dance like there s nobody watching, love like you ll never be hurt sing like theres nobody",
-    link: "/cart",
-  },
-
-  {
-    name: "Autumn Flowers",
-    image: welcome4,
-    price: "Nov 04-",
-    description:
-      "You ve gotta dance like there s nobody watching, love like you ll never be hurt sing like theres nobody",
-    link: "/cart",
-  },
-  {
-    name: "Autumn Gifts",
-    image: welcome5,
-    price: "Nov 04-",
-    description:
-      "You ve gotta dance like there s nobody watching, love like you ll never be hurt sing like theres nobody",
-    link: "/cart",
-  },
-  {
-    name: "Make Me Smile",
-    image: welcome6,
-    price: "Nov 04-",
-    description:
-      "You ve gotta dance like there s nobody watching, love like you ll never be hurt sing like theres nobody",
-    link: "/cart",
-  },
-  {
-    name: "From Bali",
-    image: welcome7,
-    price: "Nov 04-",
-    description:
-      "You ve gotta dance like there s nobody watching, love like you ll never be hurt sing like theres nobody",
-    link: "/cart",
-  },
-  {
-    name: "Our New Project",
-    image: welcome8,
-    price: "Nov 04-",
-    description:
-      "You ve gotta dance like there s nobody watching, love like you ll never be hurt sing like theres nobody",
-    link: "/cart",
-  },
-  {
-    name: "Make Me Smile",
-    image: welcome9,
-    price: "Nov 04-",
-    description:
-      "You ve gotta dance like there s nobody watching, love like you ll never be hurt sing like theres nobody",
-    link: "/cart",
-  },
-];
 const Home = () => {
-  const [Cards, setCards] = useState([]);
+  const [posts, setPosts] = useState([]);
   useEffect(() => {
     const getApi = async () => {
       const response = await axios.get(
         "https://klabblogapi.onrender.com/api/klab/blog/read"
       );
       const data = response.data.data;
-      setCards(data);
+      setPosts(data);
     };
     getApi();
   }, []);
@@ -148,15 +72,9 @@ const Home = () => {
       </section>
 
       <section className="grid-container">
-        {Cards.map((post, index) => (
-          <Card
-            key={index}
-            name={post.author}
-            image={post.blogImage}
-            description={post.content}
-            link={post.title}
-          />
-        ))}
+        {posts.length > 0 ? posts.map((post, index) => (
+          <Card  key={post.id} cardData={post}/>
+        )):<p>Loading...</p>}
       </section>
 
       <div className="main-h">

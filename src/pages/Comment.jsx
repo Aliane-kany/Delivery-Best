@@ -6,8 +6,9 @@ import { useParams } from "react-router-dom";
 function coment() {
   const { _id } = useParams();
   const [blogData, setBlogData] = useState({});
+
   useEffect(() => {
-    fetch(`https://klabblogapi.onrender.com/api/klab/blog/read${_id}`)
+    fetch(`https://klabblogapi.onrender.com/api/klab/blog/read/65328f75c74d7a03cd1f306c`)
       .then((response) => response.json())
       .then((data) => {
         setBlogData(data.data);
@@ -16,6 +17,7 @@ function coment() {
         console.error("Error fetching data:", error);
       });
   }, [_id]);
+
   console.log("POSTS", blogData);
   if (!blogData) {
     return <div>Loading...</div>;
@@ -24,38 +26,15 @@ function coment() {
     <div className="all-in-comment">
       <div className="comment-pic">
         <div className="comment-image">
-          <img src={Comment} alt="image" />
+          <img src={blogData.blogImage} alt="image" />
         </div>
         <div className="paragraph-in-comment">
-          <h2>{blogData.PostTitle}</h2>
-          <p>{blogData.PostContent}</p>
+          <h2>{blogData.title}</h2>
+          <p>{blogData.content}</p>
           <p>
-            By {blogData.creator} | {blogData.PostedDate}
+            By {blogData.author} | {blogData.PostedDate}
           </p>
-          {/* <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            Asperiores similique possimus aperiam nostrum tenetur ducimus
-             mollitia alias dignissimos saepe, nulla incidunt eveniet voluptatibus
-              voluptatem maiores libero numquam quidem vel eos.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            Asperiores similique possimus aperiam nostrum tenetur ducimus
-             mollitia alias dignissimos saepe, nulla incidunt eveniet voluptatibus
-              voluptatem maiores libero numquam quidem vel eos.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            Asperiores similique possimus aperiam nostrum tenetur ducimus
-             mollitia alias dignissimos saepe, nulla incidunt eveniet voluptatibus
-              voluptatem maiores libero numquam quidem vel eos.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            Asperiores similique possimus aperiam nostrum tenetur ducimus
-             mollitia alias dignissimos saepe, nulla incidunt eveniet voluptatibus
-              voluptatem maiores libero numquam quidem vel eos.
-              Asperiores similique possimus aperiam nostrum tenetur ducimus
-             mollitia alias dignissimos saepe, nulla incidunt eveniet voluptatibus
-              voluptatem maiores libero numquam quidem vel eos.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            Asperiores similique possimus aperiam nostrum tenetur ducimus
-             mollitia alias dignissimos saepe, nulla incidunt eveniet voluptatibus
-              voluptatem maiores libero numquam quidem vel eos.
-              </p> */}
+          
         </div>
       </div>
       <div className="comment-page">

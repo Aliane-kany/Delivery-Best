@@ -22,7 +22,7 @@ const Signup = () => {
   const handlesignup = async (data) => {
     try {
       const response = await fetch(
-        "https://klabblogapi.onrender.com/api/klab/user/newuser",
+        "https://klabblogapi.onrender.com/api/klab/blog/read",
         {
           method: "POST",
           headers: {
