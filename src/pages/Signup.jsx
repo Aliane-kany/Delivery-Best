@@ -35,7 +35,7 @@ const Signup = () => {
       if (response.ok) {
         const data = await response.json();
         console.log("Response:", data);
-        alert("Message Sent Successfull");
+        alert("User Create Successfull");
         setFname("");
         setLname("");
         setEmail("");
@@ -49,77 +49,69 @@ const Signup = () => {
   };
 
   return (
-    <div className="form-cntainer">
-      {/* <div>SIGN UP</div> */}
-      <div class="wrapperar">
-        <form action="#">
-          <h2>SIGN UP</h2>
-          <div class="input-field">
-            <input
-              type="text"
-              required
-              value={Fname}
-              onChange={(e) => setFname(e.target.value)}
-            />
-            <label>First Name</label>
-          </div>
-          <div class="input-field">
-            <input
-              type="text"
-              required
-              value={Lname}
-              onChange={(e) => setLname(e.target.value)}
-            />
-            <label>Last Name</label>
-          </div>
-          <div class="input-field">
-            <input
-              type="text"
-              required
-              value={Email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <label>Enter your email</label>
-          </div>
-          <div class="input-field">
-            <input
-              type="password"
-              required
-              value={Password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            <label>Enter your password</label>
-          </div>
-          {/* <div class="forget">
-            <label for="remember">
-              <input type="checkbox" id="remember" />
-              <p>Remember me</p>
-            </label>
-            <a href="#">Forgot password?</a>
-          </div> */}
-         {/* <div className="upload-image">
-        <input className="choose" type="file" name="image"></input>
-        </div> */}
+    <>
+      <Navbar />
+      <div className="form-cntainer">
+        {/* <div>SIGN UP</div> */}
+        <div class="wrapperar">
+          <form action="#">
+            <h2>SIGN UP</h2>
+            <div class="input-field">
+              <input
+                type="text"
+                required
+                value={Fname}
+                onChange={(e) => setFname(e.target.value)}
+              />
+              <label>First Name</label>
+            </div>
+            <div class="input-field">
+              <input
+                type="text"
+                required
+                value={Lname}
+                onChange={(e) => setLname(e.target.value)}
+              />
+              <label>Last Name</label>
+            </div>
+            <div class="input-field">
+              <input
+                type="text"
+                required
+                value={Email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <label>Enter your email</label>
+            </div>
+            <div class="input-field">
+              <input
+                type="password"
+                required
+                value={Password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <label>Enter your password</label>
+            </div>
 
-          <button
-            type="submit"
-            onClick={(e) => {
-              e.preventDefault();
-              handlesignup(FormData);
-            }}
-          >
-            Register
-          </button>
+            <button
+              type="submit"
+              onClick={(e) => {
+                e.preventDefault();
+                handlesignup(FormData);
+              }}
+            >
+              Register
+            </button>
 
-          <div class="register">
-            <p>
-              Don't have an account? <Link to="/Login">Login</Link>
-            </p>
-          </div>
-        </form>
+            <div class="register">
+              <p>
+                Already have an account? <Link to="/Login">Login</Link>
+              </p>
+            </div>
+          </form>
+        </div>
       </div>
-    </div>
-    
+    </>
   );
 };
 

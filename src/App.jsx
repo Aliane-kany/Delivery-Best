@@ -9,15 +9,17 @@ import Home from "./pages/home";
 import Signup from "./pages/Signup";
 import FooterSection from "./component/Footer";
 import Dashbord from "./pages/Dashbord";
-import Comment from "./pages/Comment";
+import Coment from "./pages/SinglePost";
 import Blogs from "./pages/Blogs";
-// import Modol from "./pages/Modol";
-
+import SinglePost from "./pages/SinglePost";
+import Update from "./pages/Update";
+import Dashbordog from "./pages/Dashbordog";
+import Allcharts from "./component/Allcharts";
 function App() {
   return (
     <>
-     <Router>
-        <Navbar />        
+      <Router>
+        
         <Routes>
           <Route path="/" element={<Home />} exact />
           <Route path="/about" element={<About />} />
@@ -25,10 +27,12 @@ function App() {
           {/* <Route path="/login" element={<Login />} /> */}
           <Route path="/signup" element={<Signup />} />
           <Route path="/Dashbord" element={<Dashbord />} />
-          <Route path="/Comment" element={<Comment />} />
+          <Route path="/Dashbordog" element={<Dashbordog />} />
+          <Route path="/Blog/:_id" element={<SinglePost />} />
           <Route path="/Blogs" element={<Blogs />} />
           {/* <Route path="/Modol" element={<Modol />} /> */}
-
+          <Route path="/update" element={<Update />} />
+          <Route path="/Allcharts" element={<Allcharts />} />
         </Routes>
         <FooterSection />
       </Router>

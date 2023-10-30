@@ -4,8 +4,12 @@ import image from "../asset/contact1.png";
 
 const Contact = () => {
   return (
+    
+    <>
+    <Navbar />
     <div className="wrapper-center">
-    <div>
+    <div className="wrapper-content">
+   
       <div class="wrapper">
         {/* <header> */}
         <div className="contact-image">
@@ -37,7 +41,7 @@ const Contact = () => {
               placeholder="Write your message"
               name="message"
             ></textarea>
-            {/* <i class="material-icons">message</i> */}
+           
           </div>
           <div class="button-area">
             <button type="submit">Send Message</button>
@@ -46,9 +50,8 @@ const Contact = () => {
         </form>
       </div>
       </div>
-
-      {/* <h1>Contact</h1> */}
     </div>
+    </>
   );
 };
 

@@ -1,19 +1,65 @@
-import React from "react";
+import React, { useState } from "react";
 import "../pages/Login.css";
 import { Link } from "react-router-dom";
 const Login = () => {
- 
+  // fetching data in login
+  const [Email, setEmail] = useState("");
+  const [Password, setPassword] = useState("");
+
+  const FormData = {
+    Email,
+    Password,
+  };
+
+  const handlelogin = async (data) => {
+    try {
+      const response = await fetch(
+        "https://klabblogapi.onrender.com/api/klab/user/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data), // Use FormData directly without wrapping it in an object
+        }
+      );
+
+      if (response.ok) {
+        const data = await response.json();
+        console.log("Response:", data);
+        // alert("Message Sent S");
+        setEmail("");
+        setPassword("");
+      } else {
+        console.error("Fail to  Login.");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
   return (
     <div className="form-cntainer">
       <div class="wrapperr">
         <form action="#">
           <h2>Login</h2>
           <div class="input-field">
-            <input type="text" required />
+            <input
+              type="text"
+              required
+              value={Email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+
             <label>Enter your email</label>
           </div>
           <div class="input-field">
-            <input type="password" required />
+            <input
+              type="password"
+              required
+              value={Password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
             <label>Enter your password</label>
           </div>
           <div class="forget">
@@ -23,7 +69,16 @@ const Login = () => {
             </label>
             <Link to="/Signup">Forget Password</Link>
           </div>
-          <Link to="/Blogs"> <button type="submitt">Log In</button></Link>
+
+          <button
+            type="submitt"
+            onClick={(e) => {
+              e.preventDefault();
+              handlelogin(FormData);
+            }}
+          >
+            Log In
+          </button>
 
           {/* <Link to="/home">Forget Password</Link> */}
           <div class="register">
@@ -35,6 +90,6 @@ const Login = () => {
       </div>
     </div>
   );
-}
+};
 
 export default Login;
