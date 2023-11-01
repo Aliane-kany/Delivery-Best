@@ -16,21 +16,27 @@ import Dashbordognav from "../component/Dashbordognav";
 const data = [
   {
     name: "Post",
-    uv: 590,
+    number: 590,
     pv: 800,
     amt: 1400,
   },
   {
     name: "Views",
-    uv: 868,
+    number: 868,
     pv: 967,
     amt: 1506,
   },
   {
     name: "Comment",
-    uv: 1397,
+    number: 1397,
     pv: 1098,
     amt: 989,
+  },
+  {
+    name: "Users",
+    number: 139,
+    pv: 198,
+    amt: 589,
   },
 ];
 
@@ -58,8 +64,8 @@ export default class CustomBarChart extends PureComponent {
             <YAxis />
             <Tooltip />
             <Legend />
-            <Bar dataKey="uv" barSize={20} fill="#413ea0" />
-            <Line type="monotone" dataKey="uv" stroke="#ff7300" />
+            <Bar dataKey="number" barSize={20} fill="crimson" />
+            <Line type="monotone" dataKey="number" stroke="#ff7300" />
           </ComposedChart>
         </ResponsiveContainer>
       </>

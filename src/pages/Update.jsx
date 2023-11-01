@@ -5,7 +5,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 // import { Navigate } from "react-router-dom";
 const Update = () => {
-  const navigate = useNavigate();
+  const navigate = useNavigate("");
 
   const [title, setTitle] = useState("");
   const [blogImage, setIfoto] = useState("");
@@ -62,7 +62,7 @@ const Update = () => {
 
       if (response.status === 201) {
         alert("Blog has been updated successfully!");
-        window.location.reload();
+        // window.location.reload();
         navigate("/Blogs");
       }
     } catch (error) {
