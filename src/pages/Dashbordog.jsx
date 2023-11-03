@@ -78,10 +78,6 @@ function Dashbordog() {
       <div>
         <main class="content-wrap">
           <header class="content-head">
-            {/* <h1>Delivery Best Story</h1> */}
-            {/* <div class="action">
-            <button>Save search</button>
-          </div> */}
           </header>
 
           <div class="content">

@@ -1,8 +1,8 @@
 import React from "react";
 import Dashbordognav from "../component/Dashbordognav";
-import CustomBarChart from "../pages/barchart";
-import StudentAreaChart from "../pages/Areachart";
-import Studentpiechart from "../pages/Piechart";
+import BarChart1 from "../pages/barchart";
+import AreaChart1 from "../pages/Areachart";
+import Spiechart1 from "../pages/Piechart";
 
 function Allcharts() {
   return (
@@ -11,14 +11,14 @@ function Allcharts() {
         <Dashbordognav />
         <div className="allcharts">
           <div style={{ width: "100%", height: "400px", marginTop: "2rem" }}>
-            <CustomBarChart />
+            <BarChart1 />
           </div>
           <div>
-            <StudentAreaChart />
+            <AreaChart1 />
           </div>
           <div className="pie-chart">
             <div style={{ width: "100%", height: "400px", marginTop: "2rem" }}>
-              <Studentpiechart />
+              <Spiechart1 />
             </div>
           </div>
         </div>

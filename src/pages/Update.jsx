@@ -3,7 +3,6 @@ import { Link, Navigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-// import { Navigate } from "react-router-dom";
 const Update = () => {
   const navigate = useNavigate("");
 
@@ -62,7 +61,6 @@ const Update = () => {
 
       if (response.status === 201) {
         alert("Blog has been updated successfully!");
-        // window.location.reload();
         navigate("/Blogs");
       }
     } catch (error) {
@@ -99,7 +97,6 @@ const Update = () => {
             id="imageInput"
             accept="image/*"
             name="image"
-            // value={blogImage}
             onChange={(e) => setIfoto(e.target.value)}
           ></input>
           <button type="send" onClick={handleUpdate}>

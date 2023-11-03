@@ -36,7 +36,7 @@ const data = [
   },
 ];
 
-export default class StudentAreaChart extends PureComponent {
+export default class AreaChart1 extends PureComponent {
   static demoUrl = "https://codesandbox.io/s/simple-area-chart-4ujxw";
 
   render() {

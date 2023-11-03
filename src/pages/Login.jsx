@@ -27,7 +27,6 @@ const Login = () => {
       if (response.ok) {
         const data = await response.json();
         console.log("Response:", data);
-        // alert("Message Sent S");
         setEmail("");
         setPassword("");
       } else {
@@ -79,8 +78,6 @@ const Login = () => {
           >
             Log In
           </button>
-
-          {/* <Link to="/home">Forget Password</Link> */}
           <div class="register">
             <p>
               Don't have an account? <Link to="/Signup">Register</Link>

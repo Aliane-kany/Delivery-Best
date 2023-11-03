@@ -23,7 +23,7 @@ const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, per
   );
 };
 
-export default class Studentpiechart extends PureComponent {
+export default class Spiechart1 extends PureComponent {
   static demoUrl = 'https://codesandbox.io/s/pie-chart-with-customized-label-dlhhj';
 
   render() {

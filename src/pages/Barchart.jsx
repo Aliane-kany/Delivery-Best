@@ -40,7 +40,7 @@ const data = [
   },
 ];
 
-export default class CustomBarChart extends PureComponent {
+export default class BarChart1 extends PureComponent {
   static demoUrl = "https://codesandbox.io/s/composed-chart-of-same-data-i67zd";
 
   render() {

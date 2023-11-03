@@ -1,10 +1,8 @@
-// import React from "react";
 import Editblogs from "../component/Editblogs";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
-// import Navbar from "../component/navbar";
-import Dashbordognav from"../component/Dashbordognav"
+import Dashbordognav from "../component/Dashbordognav";
 
 const Blogs = () => {
   const [fetchData, setFechtData] = useState([]);
@@ -22,8 +20,7 @@ const Blogs = () => {
 
   return (
     <div>
-      {/* <Navbar /> */}
-      <Dashbordognav/>
+      <Dashbordognav />
 
       <div className="add-new">
         <Link to="/Dashbord">
@@ -34,7 +31,6 @@ const Blogs = () => {
       <section className="grid-containerr">
         {fetchData.map((product, index) => (
           <Editblogs
-            // fetchData={_id}
             key={index}
             id={product._id}
             name={product.title}

@@ -52,7 +52,6 @@ const Signup = () => {
     <>
       <Navbar />
       <div className="form-cntainer">
-        {/* <div>SIGN UP</div> */}
         <div class="wrapperar">
           <form action="#">
             <h2>SIGN UP</h2>

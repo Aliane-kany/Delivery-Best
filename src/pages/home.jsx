@@ -3,8 +3,6 @@ import { useState, useEffect } from "react";
 import Navbar from "../component/navbar";
 import Card from "../component/card";
 import welcome from "../pages/Girl.png";
-import { BsFacebook } from "react-icons/bs";
-import { FaInstagramSquare, FaTwitter } from "react-icons/fa";
 
 const Home = () => {
   const [posts, setPosts] = useState([]);
@@ -74,9 +72,7 @@ const Home = () => {
       <div className="main-h">
         <h2 className="follow-me">FOLLOW ME ...</h2>
         <div className="main-iconn">
-          <div className="home-para">
-            {/* <p>Creating content from NYC</p> */}
-          </div>
+          <div className="home-para"></div>
           <div className="long-para">
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti
@@ -89,11 +85,6 @@ const Home = () => {
               iusto!
             </p>
           </div>
-          {/* <div className="home-icon">
-            <BsFacebook />
-            <FaInstagramSquare />
-            <FaTwitter />
-          </div> */}
         </div>
       </div>
     </div>

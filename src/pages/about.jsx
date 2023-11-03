@@ -1,6 +1,5 @@
 import React from "react";
 import Button from "../component/button";
-import Lifestyle from "./Lifestyle";
 import welcome from "../asset/Girl2.jpg";
 import { BsFacebook } from "react-icons/bs";
 import { FaInstagramSquare, FaTwitter } from "react-icons/fa";
