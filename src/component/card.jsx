@@ -27,8 +27,8 @@ function Card({ cardData }) {
       </div>
       <div className="views">
         <p>
-          Views <br />
-          <AiFillEye size={20} color="black" />
+          Views
+          <AiFillEye size={15} color="black" />
           {cardData.views}
         </p>
       </div>
