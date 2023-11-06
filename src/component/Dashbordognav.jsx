@@ -2,6 +2,7 @@ import React, { useState } from "react";
 // import {FaBar} from 'react-icons/fa'
 import Button from "./button";
 import { Link } from "react-router-dom";
+import Card from "../component/card";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(true);
@@ -61,19 +62,31 @@ const Navbar = () => {
         <ul
           className={`mobile-menu ${mobileMenuOpen === false ? " hidden" : ""}`}
         >
-          <Link className="menu-list" to="/">
-            Home
+          <Link className="menu-list" to="/"></Link>
+          <Link className="menu-list" to="/Dashbordog">
+            Dashbord
           </Link>
-          <Link className="menu-list" to="/about">
-            About
+          <Link className="menu-list" to="/Blogs">
+            Post
           </Link>
-          <Link className="menu-list" to="/contact">
-            Contact
+          <Link className="menu-list" to="/Allcharts">
+            chart
           </Link>
+          <button>
+            <Link
+              className="sideba-link"
+              onClick={() => {
+                window.location = "/";
+                sessionStorage.clear();
+
+                alert("logout");
+              }}
+            >
+              Logout
+            </Link>
+          </button>
         </ul>
-        <button className="login-btn">
-          <Link onClick={handleModal}>Login</Link>
-        </button>
+
         <span className="menu">
           <button
             onClick={(e) => {
@@ -128,7 +141,7 @@ const Navbar = () => {
                     }
                   }}
                 >
-                  Log In
+                  Log out
                 </button>
 
                 {/* <Link to="/home">Forget Password</Link> */}
@@ -139,7 +152,7 @@ const Navbar = () => {
                 </div>
               </form>
             </div>
-            {/* <button onClick={handleModal}className=""></button> */}
+            <button onClick={handleModal} className=""></button>
           </div>
         </div>
       )}
